@@ -1,12 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import App from "./App";
 import GlobalStyle from "./assets/css/GlobalStyle";
+import { store } from "./redux";
+import { worker } from "./mocks/browser";
+
+// 실제 api 받을 때 주석 처리 해주세요.
+if (process.env.NODE_ENV === "development") {
+  worker.start();
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <Provider store={store}>
+      <GlobalStyle />
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
