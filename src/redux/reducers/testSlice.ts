@@ -1,5 +1,5 @@
 import { createSlice, Reducer, PayloadAction } from "@reduxjs/toolkit";
-import { testAsyncAction } from "../actions/testActions";
+import { testAsyncAction } from "src/redux/actions";
 
 // testSlice의 상태 타입을 정의 (types 폴더에 작성)
 interface TestSliceInitialState {

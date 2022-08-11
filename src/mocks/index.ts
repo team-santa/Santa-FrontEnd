@@ -1,3 +1,3 @@
-export * from "./browser";
-export * from "./handlers";
-export * from "./server";
+export * from "src/mocks/browser";
+export * from "src/mocks/handlers";
+export * from "src/mocks/server";

@@ -1,1 +1,1 @@
-export * from "./testSlice";
+export * from "src/redux/reducers/testSlice";

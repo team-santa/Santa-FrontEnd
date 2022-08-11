@@ -1,3 +1,3 @@
-export * from "./store";
-export * from "./reducers";
-export * from "./actions";
+export * from "src/redux/store";
+export * from "src/redux/reducers";
+export * from "src/redux/actions";

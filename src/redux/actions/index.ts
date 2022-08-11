@@ -1,1 +1,1 @@
-export * from "./testActions";
+export * from "src/redux/actions/testActions";

@@ -1,31 +1,24 @@
-import { decrease, increase } from "./redux/reducers";
-import { testAsyncAction, useAppDispatch, useAppSelector } from "./redux";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Main, Landing } from "src/pages";
 
 const App = () => {
-  const { count, name, isLoading } = useAppSelector((state) => state.test);
-  const dispatch = useAppDispatch();
-
   return (
-    <>
-      <h1>{count}</h1>
-      <button
-        type="button"
-        onClick={() => dispatch(increase("payload로 전달됩니다."))}
-      >
-        +
-      </button>
-      <button type="button" onClick={() => dispatch(decrease())}>
-        -
-      </button>
-      {isLoading && <p>Loading..</p>}
-      <h1>{name}</h1>
-      <button
-        type="button"
-        onClick={() => dispatch(testAsyncAction("payload"))}
-      >
-        비동기
-      </button>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="main" element={<Main />}>
+          <Route index element={<div>home</div>} />
+          <Route path="map" element={<div>map</div>} />
+          <Route path="profile" element={<div>profile</div>} />
+          <Route path="login" element={<div>login</div>} />
+          <Route path="review" element={<div>review</div>} />
+          <Route path="review/:id" element={<div>review/id</div>} />
+          <Route path="write" element={<div>write</div>} />
+          <Route path="write/:id" element={<div>edit</div>} />
+        </Route>
+        <Route path="*" element={<div>Not Found</div>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 

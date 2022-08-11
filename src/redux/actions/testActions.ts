@@ -1,7 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { CreateAsyncThunkTypes } from "../store/index";
-import { increase } from "../reducers";
+import { CreateAsyncThunkTypes, increase } from "src/redux";
 
 export const testAsyncAction = createAsyncThunk<
   string, // 요청 성공시 try 문의 리턴 타입 정의
